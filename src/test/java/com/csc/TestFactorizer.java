@@ -15,8 +15,6 @@ public class TestFactorizer {
     factorizer = new Factorizer();
   }
 
-  // Replace the following example tests with your own tests
-  // of the prime factorization function.
   @Test
   public void testNine() {
     assertEquals("3,3", factorizer.prime_factors(9));
