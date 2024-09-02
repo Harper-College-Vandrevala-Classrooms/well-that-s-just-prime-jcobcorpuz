@@ -1,14 +1,28 @@
 package com.csc;
 
 public class Factorizer {
+  public String prime_factors(int number) {
+    String factors = "";
 
-  // You should implement your solution here.
-  // Feel free to delete this example method when you implement your solution.
-  public int exampleMethod(int someArgument) {
-    if (someArgument > 5) {
-      return 1;
-    } else {
-      return 2;
+    if(number <= 1){
+      return null;
     }
+
+    while (number % 2 == 0){
+      factors += "2,";
+      number /= 2;
+    }
+
+    for (int i = 3; i <= Math.sqrt(number); i += 2){
+      while (number % i == 0){
+        factors += i + ",";
+        number /= i;
+      }
+    }
+
+    if(number > 2){
+      factors += number + ",";
+    }
+    return factors.substring(0, factors.length() - 1);
   }
 }
