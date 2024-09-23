@@ -64,4 +64,29 @@ public class TestFactorizer {
   public void testNegative() {
     assertNull(null, factorizer.prime_factors(-7));
   }
+
+  @Test
+  public void testThirtySixOverTwelve(){
+    assertEquals("3/1", factorizer.reduce(36,12));
+  }
+
+  @Test
+  public void testTwelveOverTwelve(){
+    assertEquals("1/1", factorizer.reduce(12,12));
+  }
+
+  @Test
+  public void testTwelveOverFourteen(){
+    assertEquals("6/7", factorizer.reduce(12,14));
+  }
+
+  @Test
+  public void testTwelveOverThirtySeven(){
+    assertEquals("12/37", factorizer.reduce(12,37));
+  }
+
+  @Test
+  public void TestReduceWithZeroDenominator(){
+    assertEquals("Undefined", factorizer.reduce(12,0));
+  }
 }

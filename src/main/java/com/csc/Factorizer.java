@@ -25,4 +25,24 @@ public class Factorizer {
     }
     return factors.substring(0, factors.length() - 1);
   }
+
+  private int findGCD(int a, int b) {
+    while (b != 0) {
+      int temp = b;
+      b = a % b;
+      a = temp;
+    }
+    return a;
+  }
+
+  public String reduce(int numerator, int denominator) {
+    if(denominator == 0){
+      return "Undefined";
+    }
+    int gcd = findGCD(numerator, denominator);
+    int reducedNumerator = numerator / gcd;
+    int reducedDenominator = denominator / gcd;
+
+    return reducedNumerator + "/" + reducedDenominator;
+  }
 }
